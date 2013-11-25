@@ -6,6 +6,7 @@ var ZooView = Backbone.View.extend({
   },
   initialize: function(data){
     this.data = data;
+    this.$el.find("h1").text("Welcome to the " + this.data.name);
   },
 
   makeAnimal: function(e){
@@ -32,5 +33,5 @@ var AnimalView = Backbone.View.extend({
 });
 
 $(document).ready(function(){
-  var zooView = new ZooView();
+  var zooView = new ZooView({name: "Zooniverse"});
 });
